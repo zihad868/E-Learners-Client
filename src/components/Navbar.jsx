@@ -79,7 +79,7 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end">
-        <Link to='/signin' className="btn bg-[#90ebee] rounded-2xl text-gray-600">Signin</Link>
+        <Link to='/authentication' className="btn bg-[#90ebee] rounded-2xl text-gray-600">Signin</Link>
       </div>
     </div>
   );
