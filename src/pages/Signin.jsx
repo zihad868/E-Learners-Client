@@ -1,10 +1,16 @@
+import { useState } from "react";
+
 const Signin = () => {
+  const [tab, setTab] = useState(1)
+
+  console.log(tab)
   return (
     <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-center flex-nowrap dark:bg-gray-100 dark:text-gray-800">
       <a
+        onClick={() =>setTab(1)}
         rel="noopener noreferrer"
         href="#"
-        className="flex items-center flex-shrink-0 px-5 py-3 space-x-2 border-b dark:border-gray-600 dark:text-gray-600"
+        className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tab === 1 && 'border-b'} dark:border-gray-600 dark:text-gray-600`}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -21,9 +27,10 @@ const Signin = () => {
         <span>Sign In</span>
       </a>
       <a
+        onClick={() =>setTab(2)}
         rel="noopener noreferrer"
         href="#"
-        className="flex items-center flex-shrink-0 px-5 py-3 space-x-2 rounded-t-lg dark:border-gray-600 dark:text-gray-900"
+        className={`flex items-center flex-shrink-0 ${tab === 2 && 'border-b'} px-5 py-3 space-x-2 rounded-t-lg dark:border-gray-600 dark:text-gray-900`}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
