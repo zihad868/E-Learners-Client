@@ -1,8 +1,19 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 import "../assets/css/Navbar.css";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
+  const { user, signoutUser } = useContext(AuthContext);
+
+  console.log(user);
+
+  const handleSignOut = () => {
+    console.log('44')
+    signoutUser();
+  }
+
   const navLink = (
     <div className="space-x-4">
       <NavLink
@@ -79,7 +90,32 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end">
-        <Link to='/authentication' className="btn bg-[#90ebee] rounded-2xl text-gray-600">Signin</Link>
+        {!user.email && (
+          <>
+            <Link
+              to="/authentication"
+              className="btn bg-[#90ebee] rounded-2xl text-gray-600"
+            >
+              Signin
+            </Link>
+          </>
+        )}
+
+        {user.email && (
+          <>
+            <div className="dropdown dropdown-end">
+      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+        <div className="w-20 rounded-full">
+          <img alt="User Image" src={user.photoURL} />
+        </div>
+      </div>
+      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box">
+        <li><a>Settings</a></li>
+        <li><button onClick={handleSignOut}>Logout</button></li>
+      </ul>
+    </div>
+          </>
+        )}
       </div>
     </div>
   );
