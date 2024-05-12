@@ -1,8 +1,9 @@
+import Carousel from "../Shared/Carousel";
 
 const Home = () => {
     return (
         <div>
-            <h2>Home Page</h2>
+            <Carousel />
         </div>
     );
 };
