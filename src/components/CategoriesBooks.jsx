@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
 const CategoriesBooks = ({ book }) => {
     return (
@@ -8,3 +9,7 @@ const CategoriesBooks = ({ book }) => {
 };
 
 export default CategoriesBooks;
+
+CategoriesBooks.propTypes = {
+    book: PropTypes.object.isRequired
+}
