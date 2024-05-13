@@ -68,5 +68,7 @@ const BooksCard = ({ book, setIsDeleted, isDeleted }) => {
 export default BooksCard;
 
 BooksCard.propTypes = {
-    book: PropTypes.object.isRequired
+    book: PropTypes.object.isRequired,
+    isDeleted: PropTypes.bool.isRequired,
+    setIsDeleted: PropTypes.bool.isRequired
 }
