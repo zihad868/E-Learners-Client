@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddBook = () => {
     const { user } = useContext(AuthContext);
@@ -24,6 +25,26 @@ const AddBook = () => {
         const addBook = {photo, name, quantity, authName, category, description, rating, email};
 
         console.log(addBook)
+        fetch(`${import.meta.env.VITE_API_URL}/addBook`, {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(addBook)
+        })
+        .then(res => res.json())
+        .then(data => {
+          if(data.acknowledged){
+            Swal.fire({
+              position: "top",
+              icon: "success",
+              title: "Book has been saved",
+              showConfirmButton: false,
+              timer: 1500
+            });
+            e.target.reset();
+          }
+        })
     }
 
     return (
