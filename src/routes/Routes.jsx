@@ -9,6 +9,7 @@ import Signin from "../pages/Authentication/Signin";
 import Signup from "../pages/Authentication/Signup";
 import PrivateRoute from "../PrivateRoutes/PrivateRoute";
 import BookDetails from "../pages/BookDetails";
+import BookUpdate from "../pages/BookUpdate";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,11 @@ const router = createBrowserRouter([
             {
                 path: '/books/:id',
                 element: <BookDetails />,
+                loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/books/${params.id}`)
+            },
+            {
+                path: '/bookUpdate/:id',
+                element: <BookUpdate />,
                 loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/books/${params.id}`)
             },
             {
