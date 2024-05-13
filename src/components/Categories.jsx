@@ -3,10 +3,11 @@ import drama from '../assets/categories/Drama.jpg';
 import novel from '../assets/categories//Novel.jpg';
 import sciFi from '../assets/categories/Sci-Fi.jpg';
 import thriller from '../assets/categories/Thriller.jpg';
+import { Link } from "react-router-dom";
 
 
 const Categories = () => {
-  const [books, setBooks] = useState();
+  const [books, setBooks] = useState([]);
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/books`)
       .then((res) => res.json())
@@ -26,7 +27,7 @@ const Categories = () => {
         etc
       </p>
       <div className="grid md:grid-cols-4 gap-4">
-        <div>
+        <Link to={`/categoryDetails/${'Sci-Fi'}`}>
           <div className="card w-full bg-base-100 shadow-xl">
             <figure className="w-full h-52">
               <img
@@ -36,7 +37,7 @@ const Categories = () => {
             </figure>
             <div className="card-body">
               <h2 className="card-title">
-              Drama Books
+              Sci-Fi Books
                 <div className="badge badge-secondary">NEW</div>
               </h2>
               <p>This is a list of Sci-Fi Books and collections of linked short stories.</p>
@@ -45,9 +46,9 @@ const Categories = () => {
               </div>
             </div>
           </div>
-        </div>
+        </Link>
 
-        <div>
+        <Link to={`/categoryDetails/${'Thriller'}`}>
           <div className="card w-full bg-base-100 shadow-xl">
           <figure className="w-full h-52">
               <img
@@ -66,9 +67,9 @@ const Categories = () => {
               </div>
             </div>
           </div>
-        </div>
+        </Link>   
 
-        <div>
+        <Link to={`/categoryDetails/${'Novel'}`}>
           <div className="card w-full bg-base-100 shadow-xl">
           <figure className="w-full h-52">
               <img
@@ -87,9 +88,9 @@ const Categories = () => {
               </div>
             </div>
           </div>
-        </div>
+        </Link> 
 
-        <div>
+        <Link to={`/categoryDetails/${'Drama'}`}>
           <div className="card w-full bg-base-100 shadow-xl">
           <figure className="w-full h-52">
               <img
@@ -108,7 +109,7 @@ const Categories = () => {
               </div>
             </div>
           </div>
-        </div>
+        </Link>
 
       </div>
     </div>

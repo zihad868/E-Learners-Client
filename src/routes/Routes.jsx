@@ -10,6 +10,7 @@ import Signup from "../pages/Authentication/Signup";
 import PrivateRoute from "../PrivateRoutes/PrivateRoute";
 import BookDetails from "../pages/BookDetails";
 import BookUpdate from "../pages/BookUpdate";
+import CategoryDetails from "../pages/CategoryDetails";
 
 const router = createBrowserRouter([
     {
@@ -39,8 +40,9 @@ const router = createBrowserRouter([
                 loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/books/${params.id}`)
             },
             {
-                path: 'booksCategory',
-                element: 
+                path: '/categoryDetails/:id',
+                element: <CategoryDetails />,
+                loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/books/category/${params.id}`)
             },
             {
                 path: '/borrowedBooks',
