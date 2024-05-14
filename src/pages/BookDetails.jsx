@@ -31,9 +31,9 @@ const BookDetails = () => {
     const borrowDate = today.toLocaleString("en-US", options);
 
     const userEmail = user?.email;
+    const bookId = book?._id;
 
-    const borrow = {photo,name, category, userEmail, borrowDate, returnDate };
-    console.log(borrow);
+    const borrow = {bookId, quantity, photo,name, category, userEmail, borrowDate, returnDate };
 
     fetch(`${import.meta.env.VITE_API_URL}/borrow`, {
       method: 'POST',
