@@ -11,11 +11,13 @@ import PrivateRoute from "../PrivateRoutes/PrivateRoute";
 import BookDetails from "../pages/BookDetails";
 import BookUpdate from "../pages/BookUpdate";
 import CategoryDetails from "../pages/CategoryDetails";
+import ErrorPage from "../components/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Layout />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 index: true,
