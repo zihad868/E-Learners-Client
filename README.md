@@ -1,3 +1,33 @@
+
+
+## Website Name:- Library Management System
+
+## Live Link
+- https://librarymanagement-eed8e.web.app
+  
+## Features and characteristics
+-  Click one category and data show based on the category
+-  Only Authentic users can add books
+-  View button display book data fetch from API
+-  Update button update data MongoDB server
+-  Delete button remove the book from database
+-  Borrowed Books routes only users can view their borrowed books
+- Login with Email and Google Account
+- Wrong URL visit display page not found
+
+## npm package
+- React Datepicker
+- Sweetalert 
+- Swiper slider
+- React Hook form
+- Firebase
+
+  ## selected category:  
+- Novel,
+- Thriller,
+- Drama,
+- Sci-Fi.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
