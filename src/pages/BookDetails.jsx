@@ -12,8 +12,9 @@ const BookDetails = () => {
   const book = useLoaderData();
   const { user } = useContext(AuthContext);
 
-  const { photo, name, quantity, category, description, rating, authName } =
+  const {_id, photo, name, quantity, category, description, rating, authName } =
     book;
+
 
   const handleBorrow = () => {
     const today = new Date();
@@ -28,10 +29,10 @@ const BookDetails = () => {
       timeZoneName: "short",
     };
     const borrowDate = today.toLocaleString("en-US", options);
-    const reduce = 0;
+
     const userEmail = user?.email;
 
-    const borrow = { reduce, photo,name, category, userEmail, borrowDate, returnDate };
+    const borrow = {photo,name, category, userEmail, borrowDate, returnDate };
     console.log(borrow);
 
     fetch(`${import.meta.env.VITE_API_URL}/borrow`, {
@@ -52,6 +53,18 @@ const BookDetails = () => {
           showConfirmButton: false,
           timer: 1500
         });
+        console.log(borrow);
+        fetch(`${import.meta.env.VITE_API_URL}/book/${_id}`,{
+          method: 'PATCH',
+          headers: {
+              'content-type': 'application/json'
+           },
+          body: JSON.stringify(book)
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+        })
       }
     })
   };
