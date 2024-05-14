@@ -56,6 +56,10 @@ const router = createBrowserRouter([
                 element: <Authentication />,
                 children: [
                     {
+                        index: true,
+                        element: <Signin />
+                    },
+                    {
                         path: 'signin',
                         element: <Signin />
                     },

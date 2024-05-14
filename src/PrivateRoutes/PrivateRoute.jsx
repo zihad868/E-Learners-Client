@@ -1,19 +1,18 @@
 import { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import PropTypes from 'prop-types'; 
-import Spinner from '../components/Spinner';
+import { Navigate } from 'react-router-dom';
 
 const PrivateRoute = ({ children }) => {
-    const { user, loading } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
 
-    if(user?.email){
+    if(user.email){
         return children;
     }
 
-    if(loading){
-        return <Spinner />
-    }
+
     
+    return <Navigate to='/authentication/signin' />
 };
 
 export default PrivateRoute;

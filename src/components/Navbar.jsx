@@ -10,7 +10,6 @@ const Navbar = () => {
   console.log(user);
 
   const handleSignOut = () => {
-    console.log("44");
     signoutUser();
   };
 
@@ -118,7 +117,7 @@ const Navbar = () => {
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box"
               >
                 <li>
-                  <a>Settings</a>
+                  <a>{user?.displayName}</a>
                 </li>
                 <li>
                   <button onClick={handleSignOut}>Logout</button>
