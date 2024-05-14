@@ -33,22 +33,22 @@ const router = createBrowserRouter([
             },
             {
                 path: '/books/:id',
-                element: <BookDetails />,
+                element: <PrivateRoute><BookDetails /></PrivateRoute>,
                 loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/books/${params.id}`)
             },
             {
                 path: '/bookUpdate/:id',
-                element: <BookUpdate />,
+                element: <PrivateRoute><BookUpdate /></PrivateRoute>,
                 loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/books/${params.id}`)
             },
             {
                 path: '/categoryDetails/:id',
-                element: <CategoryDetails />,
+                element: <PrivateRoute><CategoryDetails /></PrivateRoute>,
                 loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/books/category/${params.id}`)
             },
             {
                 path: '/borrowedBooks',
-                element: <BorrowedBooks />,
+                element: <PrivateRoute><BorrowedBooks /></PrivateRoute>,
             },
 
             {
