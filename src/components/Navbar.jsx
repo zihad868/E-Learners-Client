@@ -89,7 +89,7 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end">
-        {!user.email && (
+        {!user?.email && (
           <>
             <Link
               to="/authentication"
@@ -100,7 +100,7 @@ const Navbar = () => {
           </>
         )}
 
-        {user.email && (
+        {user?.email && (
           <>
             <div className="dropdown dropdown-end z-20">
               <div
