@@ -12,6 +12,8 @@ import BookDetails from "../pages/BookDetails";
 import BookUpdate from "../pages/BookUpdate";
 import CategoryDetails from "../pages/CategoryDetails";
 import ErrorPage from "../components/ErrorPage";
+import About from "../pages/About";
+import PopularBooks from "../pages/PopularBooks";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: '/addBook',
                 element: <PrivateRoute><AddBook /></PrivateRoute>
+            },
+            {
+                path: '/popular',
+                element: <PopularBooks />
             },
             {
                 path: '/allBooks',
@@ -49,6 +55,10 @@ const router = createBrowserRouter([
             {
                 path: '/borrowedBooks',
                 element: <PrivateRoute><BorrowedBooks /></PrivateRoute>,
+            },
+            {
+                path: '/about',
+                element: <About />
             },
 
             {

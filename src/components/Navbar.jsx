@@ -47,6 +47,24 @@ const Navbar = () => {
       >
         Borrowed Books
       </NavLink>
+
+      <NavLink
+        to="/about"
+        className={({ isActive }) =>
+          isActive ? "text-[#70ced3] underline" : ""
+        }
+      >
+        About
+      </NavLink>
+
+      <NavLink
+        to="/popular"
+        className={({ isActive }) =>
+          isActive ? "text-[#70ced3] underline" : ""
+        }
+      >
+        Books Rating
+      </NavLink>
     </div>
   );
   return (
@@ -73,15 +91,16 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
+            {/* Small Device */}
             {navLink}
           </ul>
         </div>
-        <div className="flex justify-center items-center">
-          <a className="btn btn-ghost text-xl">
+        <div className="flex justify-center items-center space-x-5">
+          <Link to="/" className="text-xl">
             <img src={logo} alt="" />
-          </a>
+          </Link>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal font-semibold text-gray-500 text-xl  ml-12">
+            <ul className="menu menu-horizontal font-semibold text-gray-500 text-sm">
               {navLink}
             </ul>
           </div>
