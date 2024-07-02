@@ -1,7 +1,7 @@
 
 
 ## Website Name:- E-Learners
-The Online E-Library System allows users to read, borrow, and manage books online. It features an "Available Books" button to display books in stock, category filtering, and highlights popular books with ratings above four. Users can borrow and return books, which adjusts their quantity. Only authenticated users can add, update, or delete books, with changes managed via a MongoDB server. Borrowed books are user-specific, and login is available through email or Google. Error handling includes a 404 page for wrong URLs, ensuring a secure, user-friendly experience for accessing and managing digital books
+The Online E-Library System allows users to read, borrow, and manage books online. It features an "Available Books" button to display books in stock, category filtering, and highlights popular books with ratings above four. Users can borrow and return books, which adjusts their quantity. Only authenticated users can add, update, or delete books, with changes managed via a MongoDB server. Borrowed books are user-specific, and login is available through email or Google. Error handling includes a 404 page for wrong URLs.
 
 ## Live Link
 - https://librarymanagement-eed8e.web.app
