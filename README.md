@@ -28,6 +28,11 @@
 - Drama,
 - Sci-Fi.
 
+  ## Clone and Run Local
+-  first clone client
+-  command npm install
+-  setup firebase configuration in the .env file
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
